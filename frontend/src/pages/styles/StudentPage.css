@@ -1,0 +1,295 @@
+.student-page-container {
+  font-family: Arial, sans-serif;
+  background-color: #e0f7fa;  /* Light blue background color */
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 10px auto;
+  font-size: 16px;
+  text-align: left;
+  color: black; 
+}
+
+thead {
+  background-color: #b3e5fc; 
+}
+
+th, td {
+  border: 1px solid #81d4fa;
+  padding: 8px;
+}
+
+th {
+  font-weight: bold;
+  background-color: #81d4fa;  /* Light blue background for th */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e1f5fe;  /* Even rows with lighter blue */
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #b3e5fc;  /* Hover background for rows */
+  cursor: pointer;
+}
+
+.student-page-title {
+  font-size: 1.5rem;
+  color: black;  /* Set title text color to black */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form styling */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: black;  /* Set form label text color to black */
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #81d4fa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  background-color: #b3e5fc;  /* Light blue background for inputs */
+}
+
+.exam-mode-container {
+  background-color: #e0f7fa;  /* Light blue background for exam mode */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.exam-mode-container button {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4a90e2; /* Blue for the exam mode buttons */
+  color: white;
+}
+
+.exam-mode-container button:hover {
+  background-color: #357abd;  /* Darker blue on hover */
+}
+
+.form-input:read-only {
+  background-color: #b3e5fc;  /* Lighter blue for read-only fields */
+}
+
+.form-button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #007bb5;  /* Blue background for form button */
+}
+
+.user-info {
+  color: black; /* Set user info text color to black */
+  display: flex;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer; 
+}
+
+.user-info:hover {
+  color: #0288d1; /* Lighter blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for effect */
+}
+
+.book-button {
+  background-color: #007bb5;  /* Blue for book button */
+}
+
+.book-button:hover {
+  background-color: #005b8a;  /* Darker blue on hover */
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background-color: #e04141;
+}
+
+.room-selection-container {
+  background-color: #e0f7fa;  /* Light blue background for room selection */
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.room-selection-container button {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Green color for available room buttons */
+  color: white;
+}
+
+.room-selection-container button:hover {
+  background-color: #3e8e41;
+}
+
+.back-button {
+  margin: 20px 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bb5;  /* Blue for back button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #005b8a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .student-page-container {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .exam-mode-container,
+  .room-selection-container {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .user-info {
+    font-size: 16px;
+  }
+
+  .booking-form {
+    gap: 12px;
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+  }
+
+  .student-page-title {
+    font-size: 1.25rem;
+  }
+
+  .back-button,
+  .form-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .logout-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .room-selection-container button,
+  .exam-mode-container button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-page-container {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .form-input,
+  .form-select {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .user-info {
+    font-size: 14px;
+  }
+
+  .student-page-title {
+    font-size: 1.2rem;
+  }
+
+  .back-button,
+  .form-button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .logout-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 800px) {
+  .logout-button {
+    display: none; /* Makes the logout button invisible */
+  }
+}

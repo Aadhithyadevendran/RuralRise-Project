@@ -1,0 +1,45 @@
+.home-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.domain-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.domain-card {
+  width: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fefefe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.domain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.domain-image {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.domain-card h3 {
+  margin: 12px 0;
+  font-size: 1.2rem;
+  color: #222;
+}
