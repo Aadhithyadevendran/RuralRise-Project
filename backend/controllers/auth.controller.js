@@ -20,16 +20,12 @@ export const signup = async (req, res) => {
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res
-        .status(400)
-        .json({ error: "Username already exists" });
+      return res.status(400).json({ error: "Username already exists" });
     }
 
     const existingEmail = await User.findOne({ email });
     if (existingEmail) {
-      return res
-        .status(400)
-        .json({ error: "Email already exists" });
+      return res.status(400).json({ error: "Email already exists" });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -72,7 +68,7 @@ export const login = async (req, res) => {
     res.status(200).json({
       success: true,
       _id: user._id,
-      message: `logged in as ${user.role}`,
+      message: `logged in as ${user.username}`,
     });
   } catch (error) {
     console.log(`error in login controller: ${error.message}`);

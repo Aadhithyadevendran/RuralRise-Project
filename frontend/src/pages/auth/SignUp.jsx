@@ -7,14 +7,10 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const user = { username, email, password, name };
-    console.log("Sending user data:", user);
 
     if (!username || !email || !password || !name) {
       setError("Please fill in all fields.");
@@ -22,31 +18,25 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch("https://ruralrise-project.onrender.com/api/v1/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        "https://ruralrise-project.onrender.com/api/v1/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password, name }),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
         setError(data.error || "Signup failed");
-        setSuccess("");
       } else {
-        setSuccess("Signup successful!");
-        setError("");
-        setUsername("");
-        setEmail("");
-        setName("");
-        setPassword("");
-        setTimeout(() => {
-          navigate("/home");
-        }, 1000);
+        // Signup successful → navigate immediately
+        navigate("/home");
       }
     } catch (err) {
       setError("Something went wrong. Please try again.");
-      setSuccess("");
       console.error("Signup Error:", err);
     }
   };
@@ -98,14 +88,9 @@ const SignUp = () => {
             {error}
           </p>
         )}
-        {success && (
-          <p className="text-green-600 text-sm text-center mt-3 font-medium">
-            {success}
-          </p>
-        )}
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUp

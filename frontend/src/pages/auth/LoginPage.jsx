@@ -22,7 +22,7 @@ const LoginPage = () => {
   } = useMutation({
     mutationFn: async ({ username, password }) => {
       try {
-        const res = await fetch("https://ruralrise-project.onrender.com/api/v1/auth/login", {
+        const res = await fetch("api/v1/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -62,7 +62,7 @@ const LoginPage = () => {
             <img
               src={logo}
               alt="Logo"
-  className="w-52 h-17 object-contain mx-auto "
+              className="w-52 h-17 object-contain mx-auto "
             />
           </div>
 
