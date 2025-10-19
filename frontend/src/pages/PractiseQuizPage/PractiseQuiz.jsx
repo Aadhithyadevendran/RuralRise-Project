@@ -20,7 +20,7 @@ const MockInterviewPage = () => {
   };
 
   const generateQuestions = async () => {
-    const res = await axios.post('http://localhost:5002/generate-questions', params);
+    const res = await axios.post('https://ruralrise-project-1.onrender.com/generate-questions', params);
     setQuestions(res.data.questions);
     setStep(2);
   };
@@ -32,7 +32,7 @@ const MockInterviewPage = () => {
   const submitAnswers = async () => {
     const evals = [];
     for (let i = 0; i < questions.length; i++) {
-      const res = await axios.post('http://localhost:5002/evaluate-answer', {
+      const res = await axios.post('https://ruralrise-project-1.onrender.com/evaluate-answer', {
         question: questions[i],
         answer: answers[i],
         language: params.language,

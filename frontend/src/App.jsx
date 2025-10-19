@@ -33,9 +33,12 @@ function App() {
     queryKey: ["authUser"],
     queryFn: async () => {
       try {
-        const res = await fetch("/api/v1/auth/user", {
-          credentials: "include", // Ensure cookies are sent if using sessions
-        });
+        const res = await fetch(
+          "https://ruralrise-project.onrender.com/api/v1/auth/user",
+          {
+            credentials: "include", // Ensure cookies are sent if using sessions
+          }
+        );
         const data = await res.json();
         if (!res.ok || data.error) {
           throw new Error(data.error || "Something went wrong");
@@ -70,10 +73,13 @@ function App() {
         {/* Protected Routes */}
         {authUser && (
           <Route element={<Layout />}>
-			<Route path="/mock-interview" element={<MockInterview />} />
+            <Route path="/mock-interview" element={<MockInterview />} />
             <Route path="/home" element={<Home />} />
             <Route path="/daily" element={<ChallengesPage />} />
-            <Route path="challenge-mcq/:type/:id" element={<ChallengeMCQPage />} />
+            <Route
+              path="challenge-mcq/:type/:id"
+              element={<ChallengeMCQPage />}
+            />
             <Route path="/upskilling" element={<Homes />} />
             <Route path="/domain/blockchain" element={<Blockchain />} />
             <Route path="/domain/dsa" element={<DSA />} />
@@ -86,7 +92,7 @@ function App() {
             <Route path="/domain/python" element={<Python />} />
             <Route path="/resume-builder" element={<TemplateSelector />} />
             <Route path="/resume-form" element={<ResumeForm />} />
-            <Route path="/practise-quiz" element={<MockInterviewPage/>} />
+            <Route path="/practise-quiz" element={<MockInterviewPage />} />
           </Route>
         )}
 

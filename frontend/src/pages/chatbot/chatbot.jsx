@@ -11,7 +11,7 @@ const ChatPage = () => {
     const userMsg = { from: 'User', text: message };
 
     try {
-      const res = await axios.post('http://localhost:5000/chat', { message });
+      const res = await axios.post('https://ruralrise-project-2.onrender.com/chat', { message });
       const aiMsg = { from: 'AI', text: res.data.response };
 
       setConversation((prev) => [...prev, userMsg, aiMsg]);
