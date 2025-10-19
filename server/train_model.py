@@ -3,27 +3,37 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
 
-# Configure API Key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCBdBErf70UANSb8FMMJyZXSKyzmCKb808"  # Use environment variable in production
+# Load environment variables from .env
+load_dotenv()
 
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-model = genai.GenerativeModel("models/gemini-1.5-flash")
+# Get API key from environment
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    raise Exception("GOOGLE_API_KEY not set in environment variables!")
 
+# Configure Gemini API
+genai.configure(api_key=api_key)
+model = genai.GenerativeModel("models/gemini-2.5-flash")  # Updated model
+
+# Initialize FastAPI
 app = FastAPI()
 
-# Allow MERN frontend
+# CORS middleware for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace with frontend URL in production
+    allow_origins=["*"],  # Replace with your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Request model
 class ChatRequest(BaseModel):
     message: str
 
+# Chat endpoint
 @app.post("/chat")
 async def chat(request: ChatRequest):
     try:

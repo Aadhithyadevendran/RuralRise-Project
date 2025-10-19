@@ -1,0 +1,9 @@
+flask
+flask-cors
+numpy
+scikit-learn  # if needed by your model
+python-dotenv
+fastapi
+uvicorn
+python-dotenv
+google-generativeai
