@@ -32,9 +32,13 @@ function App() {
     queryKey: ["authUser"],
     queryFn: async () => {
       try {
-        const res = await fetch("api/v1/auth/user", {
-          credentials: "include",
-        });
+        const res = await fetch(
+          "https://ruralrise-project.onrender.com/api/v1/auth/user",
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        );
         const data = await res.json();
         if (!res.ok || data.error) throw new Error(data.error || "Error");
         return data;
